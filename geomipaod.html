@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>The Geoengineering Model Intercomparison Project (GeoMIP)</title></head>
+
+<body>
+<h2 align="center">Stratospheric Aerosol Optical Depth prescription for GeoMIP</h2>
+<p>&nbsp;</p>
+<p>Last updated 26 May 2011</p>
+<p>This page is for climate models participating in GeoMIP that require a prescription of stratospheric aerosol optical depth for experiments G3 and G4. These experiments use the eruption of Mount Pinatubo in 1991 as a template, but doing so necessitates working out some details, which we describe below.</p>
+<p>&nbsp;</p>
+<h3>Description of the prescriptive data</h3>
+<p>All files give values of aerosol optical depth at 550 nm. The <a href="#data">data</a> are given as netcdf files. All of the data provided are zonally averaged and is given for each latitude with one degree resolution. Time stamps listed in the annual climatology files are for the 15th of each month.</p>
+<p>The <a href="#data">data</a> are available in four formats:</p>
+<ol>
+  <li>Annual climatology (January through December), four altitudes (15-20 km, 20-25 km, 25-30 km, 30-35 km)</li>
+  <li>Annual climatology (January through December), summed over all altitudes</li>
+  <li>One month only (annual average), four altitudes (15-20 km, 20-25 km, 25-30 km, 30-35 km)</li>
+  <li>One month only (annual average), summed over all altitudes</li>
+</ol>
+<p>Using an annual climatology allows for interhemispheric variability of optical depth (circulation and deposition patterns have seasonal variability), but the difference in radiative forcing integrated over the 50 year time period of the simulation between this and the single month option should be small.</p>
+<p>The <a href="#data">data</a> are properly scaled so it is Experiment G4-ready, i.e., all data are formulated as 1/4 of the strength of the 1991 eruption of Mount Pinatubo. This data will need to be re-scaled for Experiment G3. (This process is model-dependent.)</p>
+<p>&nbsp;</p>
+<h3>How the prescriptive data was generated</h3>
+<p>Data was originally obtained from <a href="http://data.giss.nasa.gov/modelforce/strataer/" target="_blank">Forcings in GISS Climate Model:  Stratospheric Aerosol Optical Thickness</a> [<em>Sato et al.</em>, 2006]. Data available from this website are given in 24 latitude bands and for four altitude ranges.</p>
+<p>To create a climatology of geoengineering stratospheric aerosol optical depth, we started with values for the year 1992. This year was chosen because optical depth from the June 1991 eruption of Mount Pinatubo was still at significant levels, yet the aerosols had time to distribute themselves globally.</p>
+<p>Analysis of the global average stratospheric aerosol optical depth values reveals February 1992 to have the peak aerosol optical depth, with a value of 0.149. Given a globally averaged aerosol optical depth value for a given month (call it <em>x</em>), we created a scaling factor for that month via 0.149/<em>x</em>. Each latitude band for that month was multiplied by this scaling factor. All values were then divided by 4 to make simulation of Experiment G4 easier. (This experiment is defined as creation of stratospheric sulfate aerosols in the amount of 1/4 of the eruption of Pinatubo per year.)</p>
+<p>Thus we have category 1 as above (annual climatology, four altitudes). To obtain category 2 (annual climatology, summed over all altitudes), we simply summed over all four altitudes in category 1. (If you're not convinced this is the right thing to do, please click <a href="geomipaod/aodsummation.pdf">here</a>.) To obtain category 3 (annual average, four altitudes), we averaged the data from category 1 over January through December. To obtain category 4 (annual average, summed over all altitudes), we summed over all altitudes in category 3.</p>
+<p>The data  provided by <em>Sato et al.</em> [2006] are given in 24 unevenly spaced latitude bands. We provide the data at one degree latitude resolution by linearly interpolating over the <em>Sato et al.</em> data.</p>
+<p>&nbsp;</p>
+<h3><a name="data" id="data"></a>The data</h3>
+<p>Annual climatology (January through December), four altitudes (15-20 km, 20-25 km, 25-30 km, 30-35 km)</p>
+<blockquote>
+  <p><a href="geomipaod/jan_dec_15_20.nc">altitude range 15-20 km</a><br />
+    <a href="geomipaod/jan_dec_20_25.nc">altitude range 20-25 km</a><br />
+    <a href="geomipaod/jan_dec_25_30.nc">altitude range 25-30 km</a><br />
+    <a href="geomipaod/jan_dec_30_35.nc">altitude range 30-35 km</a></p>
+</blockquote>
+<p>Annual climatology (January through December), summed over all altitudes</p>
+<blockquote>
+  <p><a href="geomipaod/jan_dec_15_35.nc">altitude range 15-35 km</a></p>
+</blockquote>
+<p>One month only (annual average), four altitudes (15-20 km, 20-25 km, 25-30 km, 30-35 km)</p>
+<blockquote>
+  <p><a href="geomipaod/single_15_20.nc">altitude range 15-20 km</a><br />
+    <a href="geomipaod/single_20_25.nc">altitude range 20-25 km</a><br />
+    <a href="geomipaod/single_25_30.nc">altitude range 25-30 km</a><br />
+    <a href="geomipaod/single_30_35.nc">altitude range 30-35 km</a></p>
+</blockquote>
+<p>One month only (annual average), summed over all altitudes</p>
+<blockquote>
+  <p><a href="geomipaod/single_15_35.nc">altitude range 15-35 km</a></p>
+</blockquote>
+<p>&nbsp;</p>
+<h3>References</h3>
+<p>Sato, M., et al. (2006), Forcings in GISS climate model: Stratospheric aerosol optical thickness, available online at http://data.giss.nasa.gov/modelforce/strataer/.</p>
+<p>&nbsp;</p>
+<h3>Contact</h3>
+<!--<p>This page was created and is maintained by <a href="mailto:bkravitz@iu.edu?subject=GeoMIP">Ben Kravitz</a>. Please contact him with any questions regarding the content here.</p>-->
+</body>
+</html>
