@@ -276,3 +276,56 @@ color: #606060;
 background-color: #606060;
 height: 1px;
 }
+
+
+/* ============================================================
+   MOBILE RESPONSIVENESS
+   ============================================================ */
+
+/* Images never overflow their container on any screen size.
+   max-width overrides any hardcoded width= attribute when the
+   container is narrower; height: auto preserves aspect ratio. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tables that hold data (publications list, etc.) scroll
+   sideways on small screens rather than overflowing the page. */
+.container table {
+  max-width: 100%;
+}
+
+@media (max-width: 767px) {
+
+  /* The 10%-wide empty <td> cells used as left/right margins
+     in meeting and simulation pages shrink to nothing on mobile,
+     letting the content cell use the full screen width. */
+  td[width="10%"] {
+    display: none;
+  }
+
+  /* Data tables become horizontally scrollable rather than
+     pushing the page wider. */
+  .container > table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Footer: stack "Back to top" above the main text instead
+     of floating them left/right where they overlap on narrow screens. */
+  footer .pull-right,
+  footer .pull-left {
+    float: none !important;
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+  }
+
+  /* Reduce the large page heading font on small screens. */
+  .featurette2-heading {
+    font-size: 30px;
+  }
+
+}

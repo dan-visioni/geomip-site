@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "geomip-site",
+      "runtimeExecutable": "/usr/bin/perl",
+      "runtimeArgs": ["-MIO::Socket::INET", "-e", "use IO::Socket::INET; use File::Basename; use POSIX qw(strftime); my $dir='/Users/danielevisioni/Documents/GitHub/geomip-site'; my %mime=('html','text/html','css','text/css','js','application/javascript','png','image/png','jpg','image/jpeg','gif','image/gif','svg','image/svg+xml'); my $srv=IO::Socket::INET->new(LocalPort=>8765,Type=>SOCK_STREAM,Reuse=>1,Listen=>5) or die; while(my $c=$srv->accept){my $req=<$c>;my($m,$p)=$req=~/^(GET|HEAD) ([^ ]+)/;$p=~s/\\?.*//;$p=~s|%([0-9a-f]{2})|chr hex $1|gie;$p='/'.$p if $p!~/^\\//;$p.='index.html' if $p=~/\\/$/;my $f=$dir.$p;if(-f $f){my($e)=$f=~/\\.([^.]+)$/;my $ct=$mime{lc$e}//'application/octet-stream';open my $fh,'<',$f;my @d=<$fh>;close $fh;my $b=join'',@d;print $c \"HTTP/1.1 200 OK\\r\\nContent-Type: $ct\\r\\nContent-Length: \".length($b).\"\\r\\n\\r\\n$b\"}else{print $c \"HTTP/1.1 404 Not Found\\r\\n\\r\\n404\"}close $c}"],
+      "port": 8765
+    }
+  ]
+}

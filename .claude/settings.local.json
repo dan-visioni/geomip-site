@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sort -t: -k2 -rn)",
+      "Bash(sips --help)",
+      "Bash(grep -v \":1$\")",
+      "Bash(grep -v \":0$\")",
+      "Bash(git -C /Users/danielevisioni/Documents/GitHub/geomip-site diff css/ben.css)",
+      "Bash(echo \"\" >> /Users/danielevisioni/Documents/GitHub/geomip-site/css/ben.css)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(which python3 *)",
+      "Bash(npx --version)",
+      "Bash(ruby --version)",
+      "Bash(ls /usr/local/bin/node /usr/bin/node ~/.nvm/versions/node/*/bin/node 2>/dev/null | head -3 && which php)",
+      "Bash(/usr/bin/python3 -c ' *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8766/index.html)",
+      "Bash(lsof -ti:8765)",
+      "Bash(xargs kill -9)",
+      "Bash(lsof -ti:8766)",
+      "Bash(busybox httpd *)",
+      "Bash(perl -v)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8765/index.html)",
+      "Bash(curl -s http://localhost:8765/index.html)",
+      "Bash(git fetch *)",
+      "Read(//private/tmp/**)"
+    ]
+  }
+}
