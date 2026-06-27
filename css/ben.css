@@ -194,7 +194,9 @@
     @media (max-width: 979px) {
 
       /* Switch navbar to normal flow so the expanded hamburger menu
-         sits above the page content rather than behind it. */
+         sits above the page content rather than behind it.
+         The -90px margin-bottom on desktop pulls content up to overlap
+         the absolute navbar; on mobile we don't want any of that. */
       .navbar-wrapper {
         position: relative;
         margin-top: 0;
@@ -208,7 +210,9 @@
 
       .navbar-inner {
         border-radius: 0;
-        margin: -20px 0;
+        /* Was -20px 0: the -20px top offset was only needed when the
+           wrapper was absolute. Now just bleed to screen edges. */
+        margin: 0 -20px;
       }
 
       .carousel .item {
