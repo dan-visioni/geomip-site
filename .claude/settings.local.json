@@ -27,7 +27,8 @@
       "WebFetch(domain:esd.copernicus.org)",
       "WebFetch(domain:acp.copernicus.org)",
       "WebFetch(domain:gmd.copernicus.org)",
-      "WebFetch(domain:agupubs.onlinelibrary.wiley.com)"
+      "WebFetch(domain:agupubs.onlinelibrary.wiley.com)",
+      "Bash(curl -s http://localhost:8765/css/ben.css)"
     ]
   }
 }

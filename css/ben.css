@@ -193,10 +193,19 @@
 
     @media (max-width: 979px) {
 
-      .container.navbar-wrapper {
+      /* Switch navbar to normal flow so the expanded hamburger menu
+         sits above the page content rather than behind it. */
+      .navbar-wrapper {
+        position: relative;
+        margin-top: 0;
         margin-bottom: 0;
-        width: auto;
       }
+
+      /* Page heading no longer needs to clear an absolute navbar. */
+      .featurette2-heading {
+        margin-top: 20px;
+      }
+
       .navbar-inner {
         border-radius: 0;
         margin: -20px 0;
