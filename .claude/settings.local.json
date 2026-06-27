@@ -22,7 +22,12 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8765/index.html)",
       "Bash(curl -s http://localhost:8765/index.html)",
       "Bash(git fetch *)",
-      "Read(//private/tmp/**)"
+      "Read(//private/tmp/**)",
+      "WebFetch(domain:doi.org)",
+      "WebFetch(domain:esd.copernicus.org)",
+      "WebFetch(domain:acp.copernicus.org)",
+      "WebFetch(domain:gmd.copernicus.org)",
+      "WebFetch(domain:agupubs.onlinelibrary.wiley.com)"
     ]
   }
 }
